@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/notesFragment">
+
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="alex.com.notebook.ui.notes.NotesFragment"
+        android:label="Notebook"
+        tools:layout="@layout/fragment_notes">
+        <action
+            android:id="@+id/action_notesFragment_to_editorFragment4"
+            app:destination="@id/editorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editorFragment"
+        android:name="alex.com.notebook.ui.editor.EditorFragment"
+        android:label="{fragmentTitle}">
+        <argument
+            android:name="note"
+
+            app:argType="alex.com.notebook.data.Note"
+            app:nullable="true" />
+        <argument
+            android:name="fragmentTitle"
+            app:argType="string" />
+    </fragment>
+</navigation>
